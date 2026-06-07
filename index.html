@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LAVA Study AI</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#0f172a,#1e3a8a);
+color:white;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:20px;
+}
+
+h1{
+text-align:center;
+font-size:42px;
+color:#38bdf8;
+}
+
+p{
+text-align:center;
+color:#cbd5e1;
+}
+
+textarea{
+width:100%;
+height:220px;
+padding:15px;
+border-radius:15px;
+border:none;
+font-size:16px;
+margin-top:20px;
+box-sizing:border-box;
+}
+
+button{
+width:100%;
+padding:15px;
+margin-top:12px;
+border:none;
+border-radius:12px;
+background:#38bdf8;
+font-size:18px;
+font-weight:bold;
+}
+
+#output{
+margin-top:20px;
+background:#111827;
+padding:20px;
+border-radius:15px;
+min-height:120px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>LAVA Study AI</h1>
+
+<p>Your Personal AI Study Assistant</p>
+
+<textarea id="notes" placeholder="Paste your notes here..."></textarea>
+
+<button onclick="summary()">Generate Summary</button>
+
+<div id="output">
+Welcome to LAVA Study AI 🚀
+</div>
+
+</div>
+
+<script>
+function summary(){
+
+let text=document.getElementById("notes").value;
+
+if(text==""){
+document.getElementById("output").innerHTML="Please paste your notes.";
+return;
+}
+
+let result=text.substring(0,300);
+
+document.getElementById("output").innerHTML="<h3>Summary</h3>"+result+"...";
+}
+</script>
+
+</body>
+  </html>
